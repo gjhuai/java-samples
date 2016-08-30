@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'maven'
+
+group = 'com.stormpath.samples'
+version = '0.1.0'
+
+description = """Shiro Hazelcast Web Sample"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+     maven { url "http://192.168.0.207:8081/nexus/content/groups/public/" }
+}
+
+dependencies {
+    compile group: 'com.hazelcast', name: 'hazelcast', version:'3.6.2'
+    compile group: 'org.apache.shiro', name: 'shiro-core', version:'1.2.3'
+    compile group: 'org.apache.shiro', name: 'shiro-web', version:'1.2.3'
+    
+    runtime group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.12'
+    runtime group: 'log4j', name: 'log4j', version:'1.2.16'
+    runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.12'
+    
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
+    providedCompile group: 'javax.servlet', name: 'jstl', version:'1.2'
+}
