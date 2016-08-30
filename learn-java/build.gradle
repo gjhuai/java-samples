@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.tubez'
+version = '0.1'
+
+description = """Learning java"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories { jcenter() }
+
+dependencies {
+    compile "junit:junit:4.11"
+}

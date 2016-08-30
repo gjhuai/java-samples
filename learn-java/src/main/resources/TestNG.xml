@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> 
+<suite name="all">
+	<test name="cmdpmsTest">
+	<!-- <parameter name="param1" value="xxxxxxx"></parameter> -->
+		<classes>
+			<!-- <class name="com.wcs.cmdpms.function.billing.OnePurToFewEnt">
+				<methods>
+					<include name="doubleSampler_OnePurToFewEnt"></include>
+					<include name="agreeNoticeBilling_OnePurDocFewEntDoc3"></include>
+				</methods>
+			</class> -->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.Process" />-->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.EntranceDoc" />-->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.NoticeDoc" />-->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.Sampler" />-->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.PurAgree" /> -->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.PurDoc" /> -->
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.EntranceBilling" />-->
+			<class name="com.wcs.cmdpms.function.caseManager.MergeBilling" />
+			<class name="com.wcs.cmdpms.function.billing.OnePurToOneEnt" />
+			<class name="com.wcs.cmdpms.function.billing.EntTimeBilling" />
+			<class name="com.wcs.cmdpms.function.billing.OnePurToFewEnt" />
+			<!-- <class name="com.wcs.cmdpms.function.caseManager.Demo" /> -->
+		</classes>
+	</test>
+</suite>
