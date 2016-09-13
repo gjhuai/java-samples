@@ -18,7 +18,13 @@
 			<url>http://192.168.0.207:8081/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
-	
+    <pluginRepositories>
+        <pluginRepository>
+            <id>gm-repo</id>
+            <url>http://192.168.0.207:8081/nexus/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
     <dependencies>
         <!-- kotlin -->
         <dependency>
