@@ -1,0 +1,58 @@
+buildscript {
+    ext{
+        gmRepoUrl = "http://192.168.0.207:8081/nexus/content/groups/public/"
+        ver_kotlin = "1.0.3"
+    }
+    repositories { 
+        maven { url "$gmRepoUrl" }
+        //mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$ver_kotlin"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+group = 'com.bugull.redis'
+version = '1.3'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.compilerArgs = ["-Xlint:none"]
+[compileJava, compileTestJava]*.options*.encoding = "UTF-8"
+
+repositories {  
+    maven { url "$gmRepoUrl" }
+    mavenLocal()
+    //maven { url "http://maven.oschina.net/content/groups/public/" }
+    //mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$ver_kotlin"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$ver_kotlin"
+    compile 'redis.clients:jedis:2.8.1'
+    testCompile "junit:junit:4.12"
+}
+
+project.ext.set("junit", "true")
+
+test{
+    onlyIf {
+        project.junit == "true"
+    }
+    testLogging.showStandardStreams = true
+}
+
+task copyJars(type: Copy) {
+    from configurations.runtime
+    into 'libs'
+}
+//sourceSets {
+//    main.java.srcDirs += 'src/main/kotlin'
+//}
