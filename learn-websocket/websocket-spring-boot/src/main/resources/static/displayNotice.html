@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WebSocket Stomp Display Received Notice</title>
+</head>
+<body>
+	<div>
+		<h3>Notices:</h3>
+		<ol id="messages"></ol>
+	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/sockjs.min.js"></script>
+	<script type="text/javascript" src="js/stomp.min.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var messageList = $("#messages");
+
+		// defined a connection to a new socket endpoint
+		var socket = new SockJS('/stomp');
+
+		var stompClient = Stomp.over(socket);
+
+        stompClient.connect({ }, function(frame) {
+		    console.log('notice socket connected!');
+			// subscribe to the /topic/message endpoint
+			stompClient.subscribe("/topic/notice/user1", function(data) {
+				var message = data.body;
+				messageList.append("<li>" + message + "</li>");
+			});
+        });
+	});
+	
+		
+	</script>
+</body>
+</html>
