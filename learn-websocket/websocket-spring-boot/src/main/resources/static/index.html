@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<title>WebSocket Stomp Receiving Example</title>
 </head>
 <body>
 	<div>
-		<h3>Messages:</h3>
+		<h3>Time:</h3>
 		<ol id="messages"></ol>
 	</div>
 
@@ -13,8 +14,14 @@
 	<script type="text/javascript" src="js/sockjs.min.js"></script>
 	<script type="text/javascript" src="js/stomp.min.js"></script>
 
+	<script type="text/javascript" src="js/gcfutil.js"></script>
+    <script type="text/javascript" src="js/CFInstall.js"></script>
+    
 	<script type="text/javascript">
 		$(document).ready(function() {
+			// 检测并提示用户安装Google Chrome Frame插件
+			gcfutil.showSetupGcfPrompt();
+			
 			var messageList = $("#messages");
 
 			// defined a connection to a new socket endpoint
