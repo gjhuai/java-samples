@@ -1,0 +1,8 @@
+/target/
+/work/
+/.settings/
+*.classpath
+.project
+*.prefs
+.springBeans
+*.component

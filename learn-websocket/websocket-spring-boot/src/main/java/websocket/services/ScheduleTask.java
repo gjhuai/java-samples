@@ -17,7 +17,7 @@ public class ScheduleTask {
     // this will send a message to an endpoint on which a client can subscribe
     @Scheduled(fixedRate = 1000)
     public void trigger() {
-        this.template.convertAndSend("/topic/message", "Date: " + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+        this.template.convertAndSend("/topic/timer", new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
     }
 
 }

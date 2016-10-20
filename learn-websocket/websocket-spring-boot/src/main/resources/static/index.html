@@ -7,7 +7,7 @@
 <body>
 	<div>
 		<h3>Time:</h3>
-		<ol id="messages"></ol>
+		<time id="currTime"></time>
 	</div>
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -22,7 +22,7 @@
 			// 检测并提示用户安装Google Chrome Frame插件
 			gcfutil.showSetupGcfPrompt();
 			
-			var messageList = $("#messages");
+			var timeTag = $("#currTime");
 
 			// defined a connection to a new socket endpoint
 			var socket = new SockJS('/stomp');
@@ -31,9 +31,9 @@
 
             stompClient.connect({ }, function(frame) {
 				// subscribe to the /topic/message endpoint
-				stompClient.subscribe("/topic/message", function(data) {
-					var message = data.body;
-					messageList.html("<li>" + message + "</li>");
+				stompClient.subscribe("/topic/timer", function(data) {
+					var time = data.body;
+					timeTag.html("<li>" + time + "</li>");
 				});
             });
 		});

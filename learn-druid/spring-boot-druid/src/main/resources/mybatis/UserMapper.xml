@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="space.isnow.spring_boot_demo.demo.dao.UserMapper">
+ 
+  <select id="getAllUser" resultType="space.isnow.spring_boot_demo.demo.domain.User">
+    select id, user_name,pass_word from user;
+  </select>
+
+    <select id="getUserById" resultType="space.isnow.spring_boot_demo.demo.domain.User" parameterType="java.lang.Long">
+         select id, user_name,pass_word from user where id=#{id}
+    </select>
+
+    <insert id="saveUser" parameterType="space.isnow.spring_boot_demo.demo.domain.User">
+        insert into user(id,user_name,pass_word)
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="user_name != null">
+                #{user_name},
+            </if>
+            <if test="pass_word != null">
+                #{pass_word},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateUserById" parameterType="space.isnow.spring_boot_demo.demo.domain.User">
+        update user set
+        <if test="user_name != null">
+            user_name = #{user_name},
+        </if>
+        <if test="pass_word != null">
+            pass_word = #{pass_word}
+        </if>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="java.lang.Long">
+        delete from user where id=#{id}
+    </delete>
+ 
+</mapper>
