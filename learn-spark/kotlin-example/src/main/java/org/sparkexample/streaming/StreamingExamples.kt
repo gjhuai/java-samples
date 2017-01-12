@@ -18,7 +18,7 @@ abstract class StreamingExamples : Logging {
             // logging level.
 //            logInfo("Setting log level to [WARN] for streaming example." +
 //                    " To override add a custom log4j.properties to the classpath.")
-            Logger.getRootLogger().setLevel(Level.WARN)
+            Logger.getRootLogger().setLevel(Level.INFO)
         }
     }
     }

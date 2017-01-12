@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript">
+    function mstscload(){
+    	var client = document.getElementById("MsRdpClient");
+    	client.Server = "192.168.100.2";  //远程服务器地址
+    	client.UserName = "liuxq";  //登录账号
+    	client.AdvancedSettings.ClearTextPassword = "liuxq";  //登录密码
+    	client.Domain = "";  //要登录的域
+    	client.FullScreen = true;  //是否全屏 0否 1是 
+    	client.FullScreenTitle = "京广高铁SCADA复视";
+		
+    	//client.DesktopWidth = "1366";
+    	//client.DesktopHeight = "768";
+    	//client.Width = "1366";
+    	//client.Height = "768";
+		
+    	client.AdvancedSettings2.RedirectDrives     = false;
+    	client.AdvancedSettings2.RedirectPrinters   = true;
+    	client.AdvancedSettings2.RedirectPorts      = false;
+    	client.AdvancedSettings2.RedirectSmartCards = false;
+    	client.Connect();
+    }
+  	//关闭当前页面  
+    function closeWindow() {
+    	window.location.href= '/loginindex/initPage';
+        //window.opener = null;  
+        //window.open("", "_self");  
+        //window.close();  
+    }
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<object id="MsRdpClient" classid="CLSID:7584c670-2274-4efb-b00b-d6aaba6d3850" 
+				codebase="/download/msrdp.cab#version=5,2,3790,0" width="1680" height="1050">
+			</object>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">  
+	function MsRdpClient::OnDisconnected(disconnectCode) {
+		closeWindow();  
+	}
+
+	mstscload();
+</script>
+</html>

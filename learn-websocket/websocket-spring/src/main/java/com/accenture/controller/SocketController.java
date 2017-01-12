@@ -29,7 +29,7 @@ public class SocketController{
 	@Autowired
 	private TimerSocketHandler timerSocketHandler;
 	
-	@RequestMapping(value="/login")
+	@RequestMapping(value="/")
 	public String login(HttpSession session){
 		logger.info("用户登录了建立连接啦");
 		

@@ -37,7 +37,7 @@ public final class JavaNetworkWordCount {
 //            System.exit(1);
 //        }
 
-        String host = "192.168.0.204";
+        String host = "192.168.0.207"; // 207 上， 用 nc -lp 9999
         int port = 9999;
 
         StreamingExamples.setStreamingLogLevels();
