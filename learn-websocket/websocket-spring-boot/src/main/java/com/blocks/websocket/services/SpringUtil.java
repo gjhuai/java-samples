@@ -1,4 +1,4 @@
-package websocket.services;
+package com.blocks.websocket.services;
 
 import javax.servlet.ServletContext;
 

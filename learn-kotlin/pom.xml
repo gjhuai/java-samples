@@ -12,7 +12,7 @@
     <repositories>
         <repository>
             <id>nexus</id>
-            <url>http://192.168.0.207:8081/nexus/content/groups/public/</url>
+            <url>http://192.168.230.207:8081/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -25,7 +25,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>nexus</id>
-            <url>http://192.168.0.207:8081/nexus/content/groups/public/</url>
+            <url>http://192.168.230.207:8081/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -36,7 +36,7 @@
     </pluginRepositories>
 
     <properties>
-        <kotlin.version>1.0.3</kotlin.version>
+        <kotlin.version>1.1.0</kotlin.version>
         <junit.version>4.11</junit.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

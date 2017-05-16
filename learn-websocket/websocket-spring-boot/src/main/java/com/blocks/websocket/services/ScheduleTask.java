@@ -1,4 +1,4 @@
-package websocket.services;
+package com.blocks.websocket.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

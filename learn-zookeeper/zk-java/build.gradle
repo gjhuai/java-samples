@@ -1,7 +1,7 @@
 buildscript {
     ext{
-        gmRepoUrl = "http://192.168.0.207:8081/nexus/content/groups/public/"
-        kotlinVersion = "1.0.1-2"
+        gmRepoUrl = "http://192.168.230.207:8081/nexus/content/groups/public/"
+        kotlinVersion = "1.1.0"
     }
     repositories { maven { url "$gmRepoUrl" } }
     dependencies { 

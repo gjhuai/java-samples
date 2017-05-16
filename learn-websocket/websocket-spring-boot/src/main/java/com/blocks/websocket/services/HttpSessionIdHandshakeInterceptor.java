@@ -1,4 +1,4 @@
-package websocket.services;
+package com.blocks.websocket.services;
 
 import java.util.Map;
 import java.util.Set;
@@ -15,7 +15,7 @@ import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.HandshakeInterceptor;
 
-import websocket.config.Constants;
+import com.blocks.websocket.config.Constants;
 
 public class HttpSessionIdHandshakeInterceptor implements HandshakeInterceptor {
 	private static final Logger logger = LoggerFactory.getLogger(HttpSessionIdHandshakeInterceptor.class);

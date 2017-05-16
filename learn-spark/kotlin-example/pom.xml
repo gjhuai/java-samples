@@ -9,19 +9,19 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <kotlin.version>1.0.3</kotlin.version>
+        <kotlin.version>1.1.0</kotlin.version>
     </properties>
     
 	<repositories>
 		<repository>
 			<id>gm-repo</id>
-			<url>http://192.168.0.207:8081/nexus/content/groups/public/</url>
+			<url>http://192.168.230.207:8081/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>gm-repo</id>
-            <url>http://192.168.0.207:8081/nexus/content/groups/public/</url>
+            <url>http://192.168.230.207:8081/nexus/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
     

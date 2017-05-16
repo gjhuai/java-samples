@@ -1,7 +1,7 @@
 buildscript {
     ext{
-        gmRepoUrl = "http://192.168.0.207:8081/nexus/content/groups/public/"
-        ver_kotlin = "1.0.3"
+        gmRepoUrl = "http://192.168.230.207:8081/nexus/content/groups/public/"
+        ver_kotlin = "1.1.0"
     }
     repositories { 
         maven { url "$gmRepoUrl" }
@@ -27,9 +27,8 @@ targetCompatibility = 1.8
 [compileJava, compileTestJava]*.options*.encoding = "UTF-8"
 
 repositories {  
-    maven { url "$gmRepoUrl" }
     mavenLocal()
-    //maven { url "http://maven.oschina.net/content/groups/public/" }
+    maven { url "$gmRepoUrl" }
     //mavenCentral()
 }
 

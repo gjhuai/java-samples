@@ -1,4 +1,4 @@
-package websocket.web;
+package com.blocks.websocket.web;
 
 import java.util.Set;
 
@@ -11,11 +11,11 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import websocket.config.Constants;
-import websocket.services.SpringUtil;
+import com.blocks.websocket.config.Constants;
+import com.blocks.websocket.services.SpringUtil;
 
 @Controller
-public class NoticeController {    
+public class NoticeController { 
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
     
